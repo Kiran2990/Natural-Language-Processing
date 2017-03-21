@@ -1,0 +1,21 @@
+Feature : LikelyHood Ratio 
+cleopatra : -12.3275751089
+cassius : -12.1429345151
+coriolanus : -12.0168547667
+lucius : -11.7759097055
+marcus : -11.3934181182
+ulysses : -11.1111338712
+diomedes : -10.6919765516
+aeneas : -10.6023950156
+lepidus : -10.4045915452
+tribunes : -10.2714275938
+agrippa : -10.0987389472
+murther : -9.93224951987
+laertes : -9.84119753975
+octavius : -9.80952348947
+romans : -9.74400962105
+gent : -9.74400962105
+capitol : -9.71010218391
+murtherer : -9.63979862606
+lieutenant : -9.56589283716
+senator : -9.48799564289

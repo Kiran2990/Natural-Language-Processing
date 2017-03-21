@@ -1,0 +1,31 @@
+Classification for Comedy plays 
+
+Play_Name:awew.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 1392.549699
+Play_Name:ayli.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 2966.45577429
+Play_Name:coe.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 1540.97338585
+Play_Name:lll.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 2083.20222433
+Play_Name:maan.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 3035.23026625
+Play_Name:mfm.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 1540.291403
+Play_Name:mnd.txt  Original_Genre:Comedy  Model_Predicted_Genre:Tragedy  Likelihood_Ratio: -34.8231792223
+Play_Name:mov.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 382.409374754
+Play_Name:mww.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 4990.12629446
+Play_Name:tgov.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 1920.21320066
+Play_Name:tn.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 2497.86620293
+Play_Name:tots.txt  Original_Genre:Comedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 497.583030382
+
+ Comedy most like a Tragedy: mnd.txt
+
+Classification for Tragedy plays 
+
+Play_Name:ac.txt  Original_Genre:Tragedy  Model_Predicted_Genre:Tragedy  Likelihood_Ratio: -8202.97039344
+Play_Name:cor.txt  Original_Genre:Tragedy  Model_Predicted_Genre:Tragedy  Likelihood_Ratio: -6854.93189872
+Play_Name:ham.txt  Original_Genre:Tragedy  Model_Predicted_Genre:Tragedy  Likelihood_Ratio: -1323.0786388
+Play_Name:jc.txt  Original_Genre:Tragedy  Model_Predicted_Genre:Tragedy  Likelihood_Ratio: -10085.5670497
+Play_Name:lear.txt  Original_Genre:Tragedy  Model_Predicted_Genre:Tragedy  Likelihood_Ratio: -604.230950824
+Play_Name:mac.txt  Original_Genre:Tragedy  Model_Predicted_Genre:Tragedy  Likelihood_Ratio: -2496.43367634
+Play_Name:oth.txt  Original_Genre:Tragedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 551.769421346
+Play_Name:rj.txt  Original_Genre:Tragedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 2747.4702005
+Play_Name:ta.txt  Original_Genre:Tragedy  Model_Predicted_Genre:Tragedy  Likelihood_Ratio: -4807.06484946
+Play_Name:tc.txt  Original_Genre:Tragedy  Model_Predicted_Genre:Comedy  Likelihood_Ratio: 1929.26640907
+
+ Tragedy most like a Comedy: rj.txt

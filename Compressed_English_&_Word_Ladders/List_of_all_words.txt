@@ -1,0 +1,55 @@
+One step substitution from 'cold':
+------------------------------------
+told
+hold
+
+Two step substitution from 'cold':
+------------------------------------
+hole
+held
+cold
+told
+hold
+
+Three step substitution from 'cold':
+------------------------------------
+told
+head
+help
+hope
+home
+hold
+held
+hole
+cold
+
+
+One step substitution from 'cold' including insertion or deletion:
+------------------------------------------------------------------
+hold
+told
+could
+
+Two step substitution from 'cold' including insertion or deletion:
+------------------------------------------------------------------
+hold
+cold
+hole
+held
+would
+
+Three step substitution from 'cold' including insertion or deletion:
+-------------------------------------------------------------------
+cold
+told
+hold
+could
+whole
+help
+head
+hope
+home
+hole
+held
+would
+world

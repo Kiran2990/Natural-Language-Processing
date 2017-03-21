@@ -1,0 +1,22 @@
+# The python version used to design this code is python 2.7
+
+# The files q1.py and q2.py should exist along with the folder shakespeare and smaple.txt
+
+# The program q1.py runs immediately and results for cross entropy are displayed in the terminal
+
+    Command to execute : python q1.py
+
+# The program q2.py takes approximately 10 min to complete execution. The below files are generated as result.
+
+    - Vocabulary_list.txt : Contains a unique set of vocabulary words used for classification
+
+    - Play_classification.txt : Contains the plays and the predicted classification along with likelihood ratio
+
+    - Top_20_Comic_feature.txt : Contains the top 20 comic features
+
+    - Top_20_Tragic_feature.txt : Contains the top 20 tragic features
+
+
+    Command to execute : python q2.py
+
+

@@ -1,0 +1,113 @@
+1.a
+
+fstcompile --isymbols=ascii.syms --osymbols=ascii.syms --keep_isymbols --keep_osymbols < unvowel.txt > unvowel.fst
+
+fstprint unvowel.fst
+
+fstcompose declaration.fst unvowel.fst | fstproject --project_output | fstrmepsilon | fstprint 
+
+fstdraw --portrait unvowel.fst | dot -Tpdf > unvowel.pdf
+
+-------------------------------------------------------------------------------------------------------------------------
+
+1.b
+
+fstinvert unvowel.fst > vowel.fst
+
+fstcompose vowel.fst c1.fst > revowel1.fst
+fstcompose vowel.fst c2.fst > revowel2.fst
+fstcompose vowel.fst c3.fst > revowel3.fst
+fstcompose vowel.fst c5.fst > revowel5.fst
+fstcompose vowel.fst c7.fst > revowel7.fst
+
+fstcompose declaration.fst unvowel.fst | fstproject --project_output | fstrmepsilon | fstcompose - revowel1.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint
+
+fstcompose declaration.fst unvowel.fst | fstproject --project_output | fstrmepsilon | fstcompose - revowel2.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint
+
+fstcompose declaration.fst unvowel.fst | fstproject --project_output | fstrmepsilon | fstcompose - revowel3.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint
+
+fstcompose declaration.fst unvowel.fst | fstproject --project_output | fstrmepsilon | fstcompose - revowel5.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint
+
+fstcompose declaration.fst unvowel.fst | fstproject --project_output | fstrmepsilon | fstcompose - revowel7.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint
+
+-------------------------------------------------------------------------------------------------------------------------
+
+1.c 
+
+fstcompile --isymbols=ascii.syms --osymbols=ascii.syms --keep_isymbols --keep_osymbols < squash.txt > squash.fst
+
+fstcompose declaration.fst squash.fst | fstproject --project_output | fstrmepsilon | fstprint 
+
+fstdraw --portrait squash.fst | dot -Tpdf > squash.pdf
+
+-------------------------------------------------------------------------------------------------------------------------
+
+1.d 
+
+fstinvert squash.fst > unsquash.fst
+
+fstcompose unsquash.fst c1.fst > resquash1.fst
+fstcompose unsquash.fst c2.fst > resquash2.fst
+fstcompose unsquash.fst c3.fst > resquash3.fst
+fstcompose unsquash.fst c5.fst > resquash5.fst
+fstcompose unsquash.fst c7.fst > resquash7.fst
+
+fstcompose declaration.fst squash.fst | fstproject --project_output | fstrmepsilon | fstcompose - resquash1.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint
+
+fstcompose declaration.fst squash.fst | fstproject --project_output | fstrmepsilon | fstcompose - resquash2.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint
+
+fstcompose declaration.fst squash.fst | fstproject --project_output | fstrmepsilon | fstcompose - resquash3.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint
+
+fstcompose declaration.fst squash.fst | fstproject --project_output | fstrmepsilon | fstcompose - resquash5.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint
+
+fstcompose declaration.fst squash.fst | fstproject --project_output | fstrmepsilon | fstcompose - resquash7.fst | fstshortestpath | fstproject --project_output | fstrmepsilon | fsttopsort | fstprint
+
+------------------------------------------------------------------------------------------------------------------------
+
+2.a
+
+fstcompile --isymbols=ascii.syms --osymbols=ascii.syms --keep_isymbols --keep_osymbols < sub.txt > sub.fst
+
+fstcompose sub.fst alice4up.fst > general_sub.fst 
+
+fstcompose cold.fst general_sub.fst > 1_step.fst
+
+fstdraw --portrait 1_step.fst | dot -Tpdf > 1_step.pdf
+
+fstcompose 1_step.fst general_sub.fst > 2_step.fst
+
+fstdraw --portrait 2_step.fst | dot -Tpdf > 2_step.pdf
+
+fstarcsort 2_step.fst 2_step.fst
+
+fstarcsort general_sub.fst general_sub.fst 
+
+fstcompose 2_step.fst general_sub.fst > 3_step.fst
+
+fstdraw --portrait 3_step.fst | dot -Tpdf > 3_step.pdf
+
+-------------------------------------------------------------------------------------------------------------------------
+
+2.b
+
+fstcompile --isymbols=ascii.syms --osymbols=ascii.syms --keep_isymbols --keep_osymbols < sub_ins_del.txt > sub_ins_del.fst
+
+fstcompose sub_ins_del.fst alice4up.fst > general_ins_del.fst
+
+fstcompose cold.fst general_ins_del.fst | fstrmepsilon > 1_step_ins_del.fst
+
+fstdraw --portrait 1_step_ins_del.fst | dot -Tpdf > 1_step_ins_del.pdf
+
+fstarcsort 1_step_ins_del.fst 1_step_ins_del.fst 
+
+fstarcsort general_ins_del.fst general_ins_del.fst 
+
+fstcompose 1_step_ins_del.fst general_ins_del.fst | fstrmepsilon > 2_step_ins_del.fst
+
+fstarcsort 2_step_ins_del.fst 2_step_ins_del.fst
+
+fstdraw --portrait 2_step_ins_del.fst | dot -Tpdf > 2_step_ins_del.pdf
+
+fstcompose 2_step_ins_del.fst general_ins_del.fst | fstrmepsilon > 3_step_ins_del.fst
+
+fstdraw --portrait 3_step_ins_del.fst | dot -Tpdf > 3_step_ins_del.pdf

@@ -1,0 +1,88 @@
+Question 1: Program to find the cross entropy of the given 4 sentences
+
+# We tokenize the file by splitting all the words and remove new line characters and tab spaces.
+# We also replace extra spaces by one single space.
+# The punctuation is also removed and all text is made to lower case
+# We build a set of all the trigrams and all the bigrams in the sample text to help us in calculating the cross entropy
+  of the given sentences.
+# We compute the probability of these trigrams and bigrams and store for later use
+	(P(c1|c2c3))=count of c2c3c1 in trigram_list/count of c2c3 in bigram_list.
+	lambda smoothing of 0.1 is applied to this to make data more precise
+    V is the vocabulary set ( a-z + 0-9 + ' ' = 37 )
+    (P(c1|c2c3))= C(c2c3c1)+0.1 / C(c2c3)+ 0.1* V
+# Next we breakdown each sentence into trigrams and bigrams.
+# We compute the probability of each character by taking the ratio of the number of occurrences of trigram in the
+  sentence and number of occurrences of bigram in the sentence
+# Entropy is calculated as the summation of the previously calculated probability(p) with the log of probability of the
+  same trigram and bigram as found in the sample text which was stored previously(prob)
+    entropy += (p * math.log(prob,2))
+# Necessary lambda smoothing and Vocabulary count are added as appropriate.
+# Finally we divide the entropy by the length of the sentence-2 and multiply by -1
+
+
+
+
+Question 2: Program to classify Shakespeare's plays as Comedy/Tragedy using Naive Bayes Classifier
+
+2.1 : Tokenize the files
+
+# We tokenize the file by splitting all the words and remove new line characters and tab spaces.
+# We also replace extra spaces by one single space.
+# The punctuation is also removed and all text is made to lower case
+# This yielded in a vocabulary set of 5000+ words which satisfied the below conditions
+    - Word occurs more than or equal to 5 times overall
+    - Word occurs in more than one play
+# The generated vocabulary set has been saved in "Vocabulary_list.txt"
+
+
+2.2 : Using Naive Bayes for classification with leave-one-out cross validation.
+
+# We choose one play at a time from the list of Comedy and Tragedy plays. This play is exempted from the training data.
+  The rest of the plays are used for training by combining all the words in the comedy plays and all the words in
+  tragedy plays. This is done every time we choose a new play to be exempted.
+# The exempted play is taken as the test data.
+# We find the words in the feature vocabulary set which exist in the test data chosen.
+# For these features we compute the probability of the play being a comedy model or a tragedy model.
+# The probability for comedy is calculated by checking the number of occurrences of a feature word in the comedy set
+  divided by the number of all the words in the comedy set. We also add the lambda smoothing to the numerator and the
+  product of lambda and vocabulary set size ( number of words in vocabulary set) to the denominator.
+
+    Comedy: (P|c)= (w1w2w2....wn|c)* prior
+	Tragedy: (P|t)= (w1w2w2....wn|t)* prior
+	The class prior here is 0.5
+
+# We take the summation of log of these values to restrict the probabilities from going to inf or 0.
+# The same approach is done for the tragedy model.
+# Once we have these probabilities, we compare them to check if the test data is more of a comedy model or more of a
+  tragedy model ( probability of it being comedy > probability of it being tragedy ).
+# To compute the log likely hood ratio we divide the
+
+# To determine which comedy play was most like tragedy we check the log likely hood values for the plays and find the
+  play with the least likely hood ratio. This play tends to be more of a tragedy model than a comedy model.
+# The vice versa of the above task is done to determine which tragedy play was most like tragedy.
+# The results for each play along with their true genre, the model's predicted genre and the log likelihood ratio of
+  comedy/tragedy are stored in "Play_Classification.txt".
+
+
+2.3 : Finding the Top 20 Comic and Tragic features
+
+# For each feature in the vocabulary set we compute the probability of the feature occurring in the comedy model and
+  probability of the feature occurring in the tragic model.
+# To do this we do not exclude any file. We compute these probabilities using all the comedy plays and all the tragedy
+  plays.
+# The probability for feature to be in a comedy model is calculated by checking the number of occurrences of a
+  feature word in the comedy set divided by the number of all the words in the comedy set. We also add the lambda
+  smoothing to the numerator and the product of lambda and vocabulary set size ( number of words in vocabulary set)
+  to the denominator.
+  We also add the smoothing of 0.1 and the length of the comedy set
+
+  The formula for P( W | Comedy ):
+    The probability of a word being a comedy = count of this word in comedy + 0.1/ total number of words in comedy + 0.1*V
+	where 0.1 is smoothing and V is the length of Vocabulary
+
+  The same goes for P( W | Tragedy ):
+
+# The same is done for feature to be in a tragedy model.
+# We take the log of the ratio of these 2 probabilities to determine the comedy/tragedy log likelihood ratio of for each
+  feature. The 20 values with highest ratios for Comedy model and Tragedy model are taken.
+# The results of this are store in "Top_20_Comic_features.txt" and "Top_20_Tragic_features.txt"

@@ -1,0 +1,75 @@
+READ ME:
+----------
+
+The folder contains the below files:
+
+# Explanation of steps and FST commands.pdf - Contains explaination of the steps for each of the questions including the FST commands and sample outputs
+
+# all_commands.txt - All the commands to be excecuted in the specfied order.
+
+# List_of_all_words.txt - List of words as required in question 2
+
+
+Question 1 Files:
+-------------------
+Part A and B: 
+	unvowel.txt
+	unvowel.fst - The FST as required in the question 1a
+	vowel.fst
+	revowel1.fst
+	revowel2.fst
+	revowel3.fst
+	revowel5.fst
+	revowel7.fst
+
+The FST diagrams: unvowel.pdf
+
+
+Part C and D: 
+	squash.txt
+	squash.fst - The FST as required in the question 1c
+	unsquash.fst
+	squash1.fst
+	squash2.fst
+	squash3.fst
+	squash5.fst
+	squash7.fst
+
+The FST diagrams: squash.pdf
+
+
+Question 2 Files:
+------------------
+
+Part A:
+	sub.txt 
+	sub.fst - The FST as required in the question 2b
+	cold.txt
+	cold.fst
+	general_sub.fst - FST for all possible combinations of 4 letter words in alice4up.fst
+	1_step.fst - FST to generate words one step away from 'cold'.
+	2_step.fst - FST to generate words two step away from 'cold'.
+	3_step.fst - FST to generate words three step away from 'cold'.
+
+The FST diagrams: 
+	1_step.pdf - Diagramatic representation of FST and words generated in 1_step.fst
+	2_step.pdf - Diagramatic representation of FST and words generated in 2_step.fst
+	3_step.pdf - Diagramatic representation of FST and words generated in 2_step.fst
+
+
+Part B:
+	sub_ins_del.txt 
+	sub_ins_del.fst - The FST as required in the question 2b
+	cold.txt
+	cold.fst
+	general_ins_del.fst - FST for all possible combinations of words in alice4up.fst
+	1_step_ins_del.fst - FST to generate words one step away from 'cold'.
+	2_step_ins_del.fst - FST to generate words two step away from 'cold'.
+	3_step_ins_del.fst - FST to generate words three step away from 'cold'.
+
+
+The FST diagrams: 
+	1_step_ins_del.pdf - Diagramatic representation of FST and words generated in 1_step_ins_del.fst
+	2_step_ins_del.pdf - Diagramatic representation of FST and words generated in 2_step_ins_del.fst
+	3_step_ins_del.pdf - Diagramatic representation of FST and words generated in 3_step_ins_del.fst
+	
